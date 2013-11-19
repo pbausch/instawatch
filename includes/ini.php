@@ -14,13 +14,12 @@ ini_set('log_errors', 'On');
 
 //MySQL error-logging function
 function logerror() {
-   error_log("MySQL Error: " . mysql_errno() . " : " . mysql_error());
+   error_log("MySQL Error: " . mysqli_errno() . " : " . mysqli_error());
 }
 
 //Get this db started
 if (!$connection = @ mysqli_connect($mysql_server, $mysql_user, $mysql_pass))
-	phpinfo();
-   //die("Can't connect to the database!");
+   die("Can't connect to the database!");
 if (!mysqli_select_db($connection, $mysql_db))
    die("Error " . mysqli_errno($connection) . " : " . mysqli_error($connection));
 
