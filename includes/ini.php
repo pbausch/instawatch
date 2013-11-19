@@ -7,6 +7,11 @@ if (session_id() == "") {
     session_start();
 }
 
+//Set up some PHP stuff
+ini_set('error_reporting', E_ALL | E_STRICT);
+ini_set('display_errors', 'On');
+ini_set('log_errors', 'On');
+
 //MySQL error-logging function
 function logerror() {
    error_log("MySQL Error: " . mysql_errno() . " : " . mysql_error());
