@@ -17,6 +17,7 @@ $current_user = $instagram->getCurrentUser();
 			width:640px;
 			height:640px;
 			cursor:pointer;
+			background-size:640px 640px !important;
 		}
 		.caption {
 			position:absolute;
@@ -71,7 +72,7 @@ $current_user = $instagram->getCurrentUser();
 	    if (scrollTimer) {
 	        clearTimeout(scrollTimer);
 	    }
-	    scrollTimer = setTimeout(handleScroll, 100);
+	    scrollTimer = setTimeout(handleScroll, 50);
 	});
 	function handleScroll() {
 	    scrollTimer = null;
